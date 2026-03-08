@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="text-xl font-bold">NextDeploy</span>
             </div>
             <p className="text-gray-400">
-              A modern cga Next.js application with automatic deployment and modern UI components.
+              A modern cgan Next.js application with automatic deployment and modern UI components.
             </p>
           </div>
 
