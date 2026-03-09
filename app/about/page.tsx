@@ -33,38 +33,38 @@ export default function AboutPage() {
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             About NextDeploy
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A modern Next.js template designed to help developers build and deploy 
             production-ready applications faster than ever.
           </p>
         </div>
 
         {/* Mission Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 md:p-12 mb-16">
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 md:p-12 mb-16 border border-border">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-foreground mb-6">
               Our Mission
             </h2>
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-lg text-muted-foreground mb-8">
               We believe that every developer should have access to a production-ready 
               Next.js template that includes best practices, modern tooling, and 
               automatic deployment out of the box.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-2xl shadow-sm">
-                <div className="text-2xl font-bold text-blue-600 mb-2">Speed</div>
-                <p className="text-gray-600">Get from idea to deployment in minutes</p>
+              <div className="bg-card p-6 rounded-2xl shadow-sm border border-border">
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">Speed</div>
+                <p className="text-muted-foreground">Get from idea to deployment in minutes</p>
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-sm">
-                <div className="text-2xl font-bold text-purple-600 mb-2">Quality</div>
-                <p className="text-gray-600">Production-grade code and architecture</p>
+              <div className="bg-card p-6 rounded-2xl shadow-sm border border-border">
+                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">Quality</div>
+                <p className="text-muted-foreground">Production-grade code and architecture</p>
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-sm">
-                <div className="text-2xl font-bold text-green-600 mb-2">Simplicity</div>
-                <p className="text-gray-600">Easy to understand and customize</p>
+              <div className="bg-card p-6 rounded-2xl shadow-sm border border-border">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400 mb-2">Simplicity</div>
+                <p className="text-muted-foreground">Easy to understand and customize</p>
               </div>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
 
         {/* Team Section */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
             Meet Our Team
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
         {/* Timeline */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
             Our Journey
           </h2>
           <div className="relative">
@@ -101,14 +101,14 @@ export default function AboutPage() {
                   <div className="h-6 w-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 </div>
                 <div className={`w-1/2 ${index % 2 === 0 ? "pl-8" : "pr-8 text-right"}`}>
-                  <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                    <div className="text-2xl font-bold text-gray-900 mb-2">
+                  <div className="bg-card p-6 rounded-2xl shadow-lg border border-border">
+                    <div className="text-2xl font-bold text-foreground mb-2">
                       {milestone.year}
                     </div>
-                    <div className="text-xl font-semibold text-blue-600 mb-2">
+                    <div className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">
                       {milestone.title}
                     </div>
-                    <p className="text-gray-600">{milestone.description}</p>
+                    <p className="text-muted-foreground">{milestone.description}</p>
                   </div>
                 </div>
               </div>
@@ -117,17 +117,17 @@ export default function AboutPage() {
         </div>
 
         {/* Tech Stack */}
-        <div className="bg-gray-50 rounded-3xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        <div className="bg-secondary rounded-3xl p-8 border border-border">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-8">
             Technology Stack
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {["Next.js 14", "TypeScript", "Tailwind CSS", "React 18", "Vercel", "ESLint", "Prettier", "GitHub Actions"].map((tech) => (
               <div
                 key={tech}
-                className="bg-white p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow"
+                className="bg-card p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow border border-border"
               >
-                <div className="font-semibold text-gray-800">{tech}</div>
+                <div className="font-semibold text-foreground">{tech}</div>
               </div>
             ))}
           </div>

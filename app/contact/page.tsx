@@ -68,30 +68,30 @@ export default function ContactPage() {
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Get in Touch
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Have questions about NextDeploy? Want to contribute? We'd love to hear from you.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+          <div className="bg-card rounded-3xl p-8 shadow-lg border border-border">
+            <h2 className="text-2xl font-bold text-foreground mb-8">
               Send us a Message
             </h2>
 
             {isSubmitted ? (
-              <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-                <div className="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-3xl text-green-600">✓</span>
+              <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-8 text-center">
+                <div className="h-16 w-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl text-green-600 dark:text-green-400">✓</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-foreground mb-4">
                   Message Sent Successfully!
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Thank you for contacting us. We'll get back to you within 24 hours.
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">
                       Your Name
                     </label>
                     <input
@@ -108,12 +108,12 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">
                       Email Address
                     </label>
                     <input
@@ -122,14 +122,14 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-muted-foreground mb-2">
                     Subject
                   </label>
                   <select
@@ -137,7 +137,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
                   >
                     <option value="">Select a subject</option>
                     <option value="support">Technical Support</option>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-muted-foreground mb-2">
                     Message
                   </label>
                   <textarea
@@ -158,7 +158,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors resize-none"
                     placeholder="Tell us about your project or question..."
                   />
                 </div>
@@ -184,30 +184,30 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div>
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-8">
                 Contact Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {contactInfo.map((info, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-card rounded-2xl p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
                   >
                     <div className={`h-12 w-12 rounded-xl bg-gradient-to-r ${info.color} flex items-center justify-center text-2xl mb-4`}>
                       {info.icon}
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">
+                    <h3 className="font-semibold text-foreground mb-2">
                       {info.title}
                     </h3>
-                    <p className="text-gray-600">{info.value}</p>
+                    <p className="text-muted-foreground">{info.value}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* FAQ Section */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 border border-border">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
                 Frequently Asked Questions
               </h2>
               <div className="space-y-6">
@@ -229,11 +229,11 @@ export default function ContactPage() {
                     a: "Yes! We welcome contributions on GitHub.",
                   },
                 ].map((faq, index) => (
-                  <div key={index} className="bg-white rounded-xl p-5">
-                    <div className="font-semibold text-gray-900 mb-2">
+                  <div key={index} className="bg-card rounded-xl p-5 border border-border">
+                    <div className="font-semibold text-foreground mb-2">
                       {faq.q}
                     </div>
-                    <div className="text-gray-600">{faq.a}</div>
+                    <div className="text-muted-foreground">{faq.a}</div>
                   </div>
                 ))}
               </div>

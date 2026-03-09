@@ -39,13 +39,13 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-white">
+    <section id="features" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Everything You Need
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A complete Next.js stack with modern tools and best practices built-in.
           </p>
         </div>
@@ -54,7 +54,7 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="group bg-card rounded-2xl p-8 border border-border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               <div className="flex items-start space-x-4">
                 <div
@@ -63,20 +63,20 @@ const FeaturesSection = () => {
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-muted-foreground">
                     {feature.description}
                   </p>
                 </div>
               </div>
               
-              <div className="mt-6 pt-6 border-t border-gray-100">
+              <div className="mt-6 pt-6 border-t border-border">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Included</span>
-                  <span className="h-6 w-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600 text-sm">✓</span>
+                  <span className="text-sm text-muted-foreground">Included</span>
+                  <span className="h-6 w-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <span className="text-green-600 dark:text-green-400 text-sm">✓</span>
                   </span>
                 </div>
               </div>
@@ -84,13 +84,13 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 border border-border">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
                 Ready for Production
               </h3>
-              <p className="text-gray-600 max-w-2xl">
+              <p className="text-muted-foreground max-w-2xl">
                 This application includes everything needed for production deployment:
                 environment variables, security headers, performance optimization, 
                 and automatic deployment configuration.
@@ -100,7 +100,7 @@ const FeaturesSection = () => {
               <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
                 View Documentation
               </button>
-              <button className="bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold border-2 border-gray-200 hover:border-blue-500 transition-colors">
+              <button className="bg-card text-foreground px-6 py-3 rounded-lg font-semibold border-2 border-border hover:border-primary transition-colors">
                 Explore Code
               </button>
             </div>

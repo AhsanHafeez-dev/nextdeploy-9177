@@ -70,18 +70,18 @@ export default function ApiDemoPage() {
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             API Demo
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Test the built-in API routes of this Next.js application. All endpoints are fully functional.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* API Endpoints */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+          <div className="bg-card rounded-3xl p-8 shadow-lg border border-border">
+            <h2 className="text-2xl font-bold text-foreground mb-8">
               Available Endpoints
             </h2>
 
@@ -91,8 +91,8 @@ export default function ApiDemoPage() {
                   key={index}
                   className={`p-4 rounded-xl border cursor-pointer transition-all ${
                     selectedEndpoint === endpoint.path
-                      ? "border-blue-500 bg-blue-50"
-                      : "border-gray-200 hover:border-blue-300 hover:bg-gray-50"
+                      ? "border-primary bg-primary/10"
+                      : "border-border hover:border-primary/50 hover:bg-secondary"
                   }`}
                   onClick={() => setSelectedEndpoint(endpoint.path)}
                 >
@@ -101,19 +101,19 @@ export default function ApiDemoPage() {
                       <div className="flex items-center space-x-3">
                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                           endpoint.method === "GET"
-                            ? "bg-green-100 text-green-800"
-                            : "bg-blue-100 text-blue-800"
+                            ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400"
+                            : "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400"
                         }`}>
                           {endpoint.method}
                         </span>
-                        <code className="font-mono text-gray-800">
+                        <code className="font-mono text-foreground">
                           {endpoint.path}
                         </code>
                       </div>
-                      <p className="text-gray-600 mt-2">{endpoint.description}</p>
+                      <p className="text-muted-foreground mt-2">{endpoint.description}</p>
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center">
-                      <span className="text-gray-600">→</span>
+                    <div className="h-8 w-8 rounded-full bg-secondary flex items-center justify-center">
+                      <span className="text-muted-foreground">→</span>
                     </div>
                   </div>
                 </div>
@@ -165,8 +165,8 @@ export default function ApiDemoPage() {
             </div>
 
             {/* Recent Requests */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <div className="bg-card rounded-3xl p-8 shadow-lg border border-border">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
                 Recent Requests
               </h2>
 
@@ -175,25 +175,25 @@ export default function ApiDemoPage() {
                   {responses.map((response) => (
                     <div
                       key={response.id}
-                      className="flex items-center justify-between p-4 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+                      className="flex items-center justify-between p-4 rounded-xl border border-border hover:bg-secondary transition-colors"
                     >
                       <div>
-                        <div className="font-medium text-gray-900">
+                        <div className="font-medium text-foreground">
                           {response.name}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-muted-foreground">
                           {response.description}
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                           response.status === "active"
-                            ? "bg-green-100 text-green-800"
-                            : "bg-red-100 text-red-800"
+                            ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400"
+                            : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-400"
                         }`}>
                           {response.status}
                         </span>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-sm text-muted-foreground">
                           {new Date(response.createdAt).toLocaleTimeString()}
                         </div>
                       </div>
@@ -201,7 +201,7 @@ export default function ApiDemoPage() {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-8 text-gray-500">
+                <div className="text-center py-8 text-muted-foreground">
                   No requests yet. Test an endpoint to see results here.
                 </div>
               )}
@@ -210,53 +210,53 @@ export default function ApiDemoPage() {
         </div>
 
         {/* API Documentation */}
-        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 border border-border">
+          <h2 className="text-2xl font-bold text-foreground mb-6">
             API Documentation
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-foreground mb-4">
                 How It Works
               </h3>
-              <ul className="space-y-3 text-gray-600">
+              <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
+                  <span className="text-blue-500 dark:text-blue-400 mr-2">•</span>
                   All API routes are located in the <code>/app/api</code> directory
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
+                  <span className="text-blue-500 dark:text-blue-400 mr-2">•</span>
                   Routes are serverless functions that run on Vercel
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
+                  <span className="text-blue-500 dark:text-blue-400 mr-2">•</span>
                   Automatic TypeScript support for request/response types
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
+                  <span className="text-blue-500 dark:text-blue-400 mr-2">•</span>
                   Built-in error handling and validation
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-foreground mb-4">
                 Best Practices
               </h3>
-              <ul className="space-y-3 text-gray-600">
+              <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-green-500 dark:text-green-400 mr-2">✓</span>
                   Use proper HTTP methods (GET, POST, PUT, DELETE)
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-green-500 dark:text-green-400 mr-2">✓</span>
                   Implement rate limiting for production
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-green-500 dark:text-green-400 mr-2">✓</span>
                   Add authentication for protected routes
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-green-500 dark:text-green-400 mr-2">✓</span>
                   Include comprehensive error responses
                 </li>
               </ul>

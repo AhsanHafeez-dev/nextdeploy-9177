@@ -58,7 +58,7 @@ const StatsSection = () => {
                 </div>
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
               </div>
-              <div className="text-lg text-gray-300">{stat.label}</div>
+              <div className="text-lg text-gray-300 dark:text-gray-300">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -66,7 +66,7 @@ const StatsSection = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
             <div className="text-2xl font-bold mb-2">100%</div>
-            <div className="text-gray-300">Type Coverage</div>
+            <div className="text-gray-300 dark:text-gray-300">Type Coverage</div>
             <div className="mt-4 h-2 bg-gray-700 rounded-full overflow-hidden">
               <div className="h-full bg-green-500 rounded-full w-full"></div>
             </div>
@@ -74,7 +74,7 @@ const StatsSection = () => {
           
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
             <div className="text-2xl font-bold mb-2">A+</div>
-            <div className="text-gray-300">Performance Score</div>
+            <div className="text-gray-300 dark:text-gray-300">Performance Score</div>
             <div className="mt-4 h-2 bg-gray-700 rounded-full overflow-hidden">
               <div className="h-full bg-blue-500 rounded-full w-4/5"></div>
             </div>
@@ -82,7 +82,7 @@ const StatsSection = () => {
           
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
             <div className="text-2xl font-bold mb-2">0ms</div>
-            <div className="text-gray-300">Build Time</div>
+            <div className="text-gray-300 dark:text-gray-300">Build Time</div>
             <div className="mt-4 h-2 bg-gray-700 rounded-full overflow-hidden">
               <div className="h-full bg-purple-500 rounded-full w-3/4"></div>
             </div>
