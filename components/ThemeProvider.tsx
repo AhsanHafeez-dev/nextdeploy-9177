@@ -81,7 +81,7 @@ export function ThemeProvider({
 
   // Always provide the context
   const contextValue = {
-    theme: mounted ? theme : defaultTheme,
+    theme,
     toggleTheme,
     setTheme
   };
