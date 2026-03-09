@@ -12,6 +12,7 @@ A production-ready Next.js application with TypeScript, Tailwind CSS, and automa
 - **Automatic Deployment** to Vercel
 - **Modern UI Components** with animations
 - **Performance Optimized** with best practices
+- **Dark Mode** with toggle and system preference detection
 
 ## 📁 Project Structure
 
@@ -97,7 +98,9 @@ npm run build
 - **Tailwind CSS** for utility-first styling
 - **Custom CSS** in `app/globals.css`
 - **Responsive breakpoints** for all screen sizes
-- **Dark mode** ready (system preference)
+- **Full Dark Mode Support** with toggle button in navbar
+- **System preference detection** with manual override
+- **Persistent theme preference** saved in localStorage
 
 ## 🔧 Configuration
 
