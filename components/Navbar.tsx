@@ -7,6 +7,13 @@ import { useTheme } from "./ThemeProvider";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  
+  // Debug function to log button clicks
+  const handleThemeToggle = () => {
+    console.log("Theme toggle button clicked!");
+    console.log("Current theme before toggle:", theme);
+    toggleTheme();
+  };
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -39,7 +46,7 @@ const Navbar = () => {
               </Link>
             ))}
             <button
-              onClick={toggleTheme}
+              onClick={handleThemeToggle}
               className="p-2 rounded-lg bg-secondary hover:bg-accent transition-colors"
               aria-label="Toggle dark mode"
             >
@@ -83,7 +90,7 @@ const Navbar = () => {
           {/* Mobile menu button and theme toggle */}
           <div className="flex items-center space-x-4 md:hidden">
             <button
-              onClick={toggleTheme}
+              onClick={handleThemeToggle}
               className="p-2 rounded-lg bg-secondary hover:bg-accent transition-colors"
               aria-label="Toggle dark mode"
             >

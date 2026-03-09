@@ -76,8 +76,14 @@ export function ThemeProvider({
   }, []);
 
   const toggleTheme = useCallback(() => {
-    setThemeState((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  }, []);
+    console.log("ThemeProvider: toggleTheme function called");
+    console.log("Current theme state:", theme);
+    setThemeState((prevTheme) => {
+      const newTheme = prevTheme === "light" ? "dark" : "light";
+      console.log("ThemeProvider: Changing theme from", prevTheme, "to", newTheme);
+      return newTheme;
+    });
+  }, [theme]);
 
   // Always provide the context
   const contextValue = {
