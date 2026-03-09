@@ -18,7 +18,8 @@
   --ring: #3b82f6;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Media query removed to prevent conflict with manual theme toggle */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -36,7 +37,7 @@
     --input: #262626;
     --ring: #3b82f6;
   }
-}
+} */
 
 .dark {
   --background: #0a0a0a;
