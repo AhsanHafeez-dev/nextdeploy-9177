@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useCallback } from "react";
 
 type Theme = "light" | "dark";
 
@@ -29,21 +29,32 @@ export function ThemeProvider({
   children, 
   defaultTheme = "light" 
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [theme, setThemeState] = useState<Theme>(defaultTheme);
   const [mounted, setMounted] = useState(false);
 
-  // Initialize theme from localStorage or system preference
-  useEffect(() => {
+  // Get initial theme from localStorage or system preference
+  const getInitialTheme = (): Theme => {
+    // During SSR, return the default theme
+    if (typeof window === "undefined") {
+      return defaultTheme;
+    }
+
     const storedTheme = localStorage.getItem("theme") as Theme | null;
+    if (storedTheme) {
+      return storedTheme;
+    }
+
     const systemPrefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
+    
+    return systemPrefersDark ? "dark" : defaultTheme;
+  };
 
-    if (storedTheme) {
-      setTheme(storedTheme);
-    } else if (systemPrefersDark) {
-      setTheme("dark");
-    }
+  // Initialize theme on mount
+  useEffect(() => {
+    const initialTheme = getInitialTheme();
+    setThemeState(initialTheme);
     setMounted(true);
   }, []);
 
@@ -60,17 +71,23 @@ export function ThemeProvider({
     localStorage.setItem("theme", theme);
   }, [theme, mounted]);
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  const setTheme = useCallback((newTheme: Theme) => {
+    setThemeState(newTheme);
+  }, []);
+
+  const toggleTheme = useCallback(() => {
+    setThemeState((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  }, []);
+
+  // Always provide the context
+  const contextValue = {
+    theme: mounted ? theme : defaultTheme,
+    toggleTheme,
+    setTheme
   };
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );
